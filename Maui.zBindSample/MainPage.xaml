@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:z="clr-namespace:FunctionZero.Maui.zBind.z;assembly=FunctionZero.Maui.zBind" 
+             x:Class="Maui.zBindSample.MainPage">
+    <ContentPage.Behaviors>
+        <z:EdgeTrigger 
+            Condition="{z:Bind '(Value LT 0.5)', Source={x:Reference TheSlider}}" 
+            Rising="{z:Function 'RotationY = 180', Source={x:Reference TheImage}}"
+            Falling="{z:Function 'RotationY = 0.01', Source={x:Reference TheImage}}" />
+    </ContentPage.Behaviors>
+
+    <Grid RowDefinitions="Auto,*,Auto,Auto">
+        <Label Grid.Row="0" Text="Welcome to Maui.zBind!"
+               SemanticProperties.HeadingLevel="Level2"
+               SemanticProperties.Description="Welcome to Maui dot zed Bind!"
+               FontSize="18"
+               HorizontalOptions="Center" />
+
+        <Grid Grid.Row="0" Padding="20" ColumnDefinitions="Auto,*,Auto" ZIndex="1">
+            <Button Grid.Column="0" Text="-" >
+                <Button.Behaviors>
+                    <z:TapTrigger TapAction="{z:Function 'Value = Value - 0.1',Source={x:Reference TheSlider}}"/>
+                </Button.Behaviors>
+            </Button>
+
+            <Slider Grid.Column="1" Margin="20"  x:Name="TheSlider" Minimum="0" Maximum="1" Value="0.5" HorizontalOptions="FillAndExpand"/>
+
+            <Button Grid.Column="2" Text="+" >
+                <Button.Behaviors>
+                    <z:TapTrigger TapAction="{z:Function 'Value = Value + 0.1',Source={x:Reference TheSlider}}"/>
+                </Button.Behaviors>
+            </Button>
+        </Grid>
+
+
+        <Label Grid.Row="1" Text="IsVisible={z:Bind '(Count &amp; 112) != 0'}" FontSize="18" HorizontalOptions="Center" IsVisible="{z:Bind '(Count BAND 112) != 0'}" ZIndex="1" />
+
+        <Image Grid.Row="1"
+               x:Name="TheImage"
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HorizontalOptions="Center"
+                TranslationX="{z:Bind Sin(Count / 25.0) * 100}"
+                TranslationY="{z:Bind Cos(Count / 15.0) * 100}"
+                Rotation="{z:Bind Sin(Count / 5.0) * 20}"
+                Scale="{z:Bind Value * 3 + 0.1, Source={x:Reference TheSlider}}" />
+
+        <Label Grid.Row="1" HorizontalOptions="Fill" HorizontalTextAlignment="Center" ZIndex="3" VerticalOptions="Center" FontSize="22" Scale="{z:Bind Sin(Count/100.0) /5 + 1}">
+            The ViewModel exposes and increments a 'Count' property
+Everything else is standard Xaml plus 3 markup extensions:
+z:Bind
+z:EdgeTrigger
+z:TapTrigger
+        </Label>
+
+
+        <Label Grid.Row="2" Text="{z:Bind '\'Count : \'+Count'}" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
+
+        <Button Grid.Row="3"
+                Text="Reset 'Count' using a TapTrigger"
+                SemanticProperties.Hint="Resets the Count variable"
+                HorizontalOptions="CenterAndExpand" >
+            <Button.Behaviors>
+                <z:TapTrigger TapAction="{z:Function 'Count = 0'}"/>
+            </Button.Behaviors>
+        </Button>
+    </Grid>
+</ContentPage>
