@@ -1,10 +1,6 @@
 ﻿# FunctionZero.Maui.zBind
 `FunctionZero.Maui.zBind` contains an alternative to `Microsoft.Maui.Controls.Binding` and allows DataBinding to an Expression  
 
-## Known issue
-If you have an expressions such as `Count=Count+1` it will fail if 'Count' is declared as an int, because the '1' is assumed to be a 'long'  
-Make 'Count a 'long' or put a cast in the expression like this: `Count=Count+(Int)1`
-
 ## Contents
 1. [Quickstart](#Quickstart)
 1. [z:Bind](#zBind)
@@ -20,7 +16,7 @@ Make 'Count a 'long' or put a cast in the expression like this: `Count=Count+(In
 1. Use the package manager to add the NugetPackage `FunctionZero.Maui.zBind`
 1. Add a namespace alias to your xaml, like this:
 ```xaml 
-    xmlns:z="clr-namespace:FunctionZero.Maui.zBind.z;assembly=Maui.zBind"
+    xmlns:z="clr-namespace:FunctionZero.Maui.zBind.z;assembly=FunctionZero.Maui.zBind"
 ```
 ### Getting Started ...
 #### z:Bind - animate an Image based on 'Count' in your ViewModel ...
