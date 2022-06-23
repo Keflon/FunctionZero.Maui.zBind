@@ -1,6 +1,9 @@
 ﻿# FunctionZero.Maui.zBind
 `FunctionZero.Maui.zBind` contains an alternative to `Microsoft.Maui.Controls.Binding` and allows DataBinding to an Expression  
 
+## Known issue
+If you have an expressions such as `Count=Count+1` it will fail if 'Count is declared as an int, because the '1' is assumed to be a 'long'  
+Make 'Count a 'long' or put a cast in the expression like this: `Count=Count+(Int)1`
 
 ## Contents
 1. [Quickstart](#Quickstart)
