@@ -239,7 +239,8 @@ Coming soon
 
 
 ## Advanced Usage - Functions, aliases and operator-overloads
- `z:Bind` uses [`FunctionZero.ExpressionParserZero`](https://github.com/Keflon/FunctionZero.ExpressionParserZero) to do the heavy lifting, so take a look at the [documentation](https://github.com/Keflon/FunctionZero.ExpressionParserZero)
+ `z:Bind` uses [`FunctionZero.ExpressionParserZero`](https://github.com/Keflon/FunctionZero.ExpressionParserZero) to do 
+ the heavy lifting, so take a look at the [documentation](https://github.com/Keflon/FunctionZero.ExpressionParserZero)
 if you want to take a deeper dive. Here is a taster ...
 ### Functions
 `Sin`, `Cos` and `Tan` are registered by default, as are the _aliases_ listed above.
@@ -276,12 +277,12 @@ private static void DoLerp(Stack<IOperand> stack, IBackingStore backingStore, lo
     IOperand second = OperatorActions.PopAndResolve(operands, backingStore);
     IOperand first = OperatorActions.PopAndResolve(operands, backingStore);
 
-    double a = Convert.ToSingle(first.GetValue());
-    double b = Convert.ToSingle(second.GetValue());
-    double t = Convert.ToSingle(third.GetValue());
+    float a = Convert.ToSingle(first.GetValue());
+    float b = Convert.ToSingle(second.GetValue());
+    float t = Convert.ToSingle(third.GetValue());
 
-    // The result is of type double
-    double result = a + t * (b - a);
+    // The result is of type float
+    float result = a + t * (b - a);
 
     // Push the result back onto the operand stack
     stack.Push(new Operand(-1, OperandType.Float, result));
@@ -310,14 +311,14 @@ Then simply register the overload like this
 ```csharp
 // Overload that will allow a long to be appended to a string
 // To add a string to a long you'll need to add another overload
-parser.RegisterOverload("+", OperandType.String, OperandType.Long, 
+ep.RegisterOverload("+", OperandType.String, OperandType.Long, 
     (left, right) => new Operand(OperandType.String, (string)left.GetValue() + ((long)right.GetValue()).ToString()));
 ```
 and to add a `string` to a `long`:
 ```csharp
 // Overload that will allow a string to be appended to a long
 // To add a long to a string you'll need to add another overload
-parser.RegisterOverload("+", OperandType.Long, OperandType.String, 
+ep.RegisterOverload("+", OperandType.Long, OperandType.String, 
     (left, right) => new Operand(OperandType.String, (long)left.GetValue() + ((string)right.GetValue()).ToString()));
 ```
 
