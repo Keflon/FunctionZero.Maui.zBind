@@ -21,26 +21,37 @@
 		<Title>FunctionZero.$(AssemblyName)</Title>
 		<Product>FunctionZero.$(AssemblyName)</Product>
 		<Copyright>(c) 2022 FunctionZero Ltd</Copyright>
-		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
-		<Version>$(VersionPrefix)</Version>
+		<PackageReleaseNotes>Updated to latest ExpressionParser</PackageReleaseNotes>
+		<Version>1.0.1</Version>
 		<AssemblyName>FunctionZero.$(MSBuildProjectName)</AssemblyName>
 		<Description>DataBind to Expressions rather than just to Properties</Description>
 		<PackageLicenseFile>License.txt</PackageLicenseFile>
+		<RepositoryUrl>https://github.com/Keflon/FunctionZero.Maui.zBind</RepositoryUrl>
+		<PackageTags>zBind z:Bind Bind Binding Databind xaml MAUI ios android WinUI maccatalyst expression parser evaluator short circuit POCO </PackageTags>
+		<PackageReadmeFile>ReadMe.NuGet.md</PackageReadmeFile>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Maui.zBind\**" />
+	  <EmbeddedResource Remove="Maui.zBind\**" />
+	  <MauiCss Remove="Maui.zBind\**" />
+	  <MauiXaml Remove="Maui.zBind\**" />
+	  <None Remove="Maui.zBind\**" />
+	</ItemGroup>
 
 	<ItemGroup>
 	  <None Include="..\License.txt">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
-	  <None Include="Maui.zBind\License.txt">
+	  <None Include="..\ReadMe.NuGet.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="FunctionZero.ExpressionParserZero" Version="5.1.0" />
+	  <PackageReference Include="FunctionZero.ExpressionParserZero" Version="5.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>

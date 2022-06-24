@@ -17,7 +17,7 @@
 1. Use the package manager to add the NugetPackage `FunctionZero.Maui.zBind`
 1. Add a namespace alias to your xaml, like this:
 ```xaml 
-    xmlns:z="clr-namespace:FunctionZero.Maui.zBind.z;assembly=Maui.zBind"
+    xmlns:z="clr-namespace:FunctionZero.Maui.zBind.z;assembly=FunctionZero.Maui.zBind"
 ```
 ### Getting Started ...
 #### z:Bind - animate an Image based on 'Count' in your ViewModel ...
@@ -56,7 +56,7 @@ Just like a standard `Binding`, the *data-source* is the current *BindingContext
 If this *data-source* supports `INotifyPropertyChanged`, changes will be tracked.
 ### z:Bind Expressions
 |Sample Expression|Source|Notes|
-|--|:--:|
+|--|:--:|--|
 |`{z:Bind Count}`|BindingContext| Bind to `Count`, same as `Binding`|
 |`{z:Bind Count * 2}`|BindingContext| Bind to an expression that yields Count * 2|
 |`{z:Bind '(Delta.X &lt; 0.2) &amp;&amp; (Delta.X &gt; -0.2)' }`|BindingContext| True if (Delta.X < 0.2) && (Delta.X > -0.2)|
