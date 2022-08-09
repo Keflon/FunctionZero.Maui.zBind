@@ -1,6 +1,8 @@
 ﻿# FunctionZero.Maui.zBind
 `FunctionZero.Maui.zBind` contains an alternative to `Microsoft.Maui.Controls.Binding` and allows DataBinding to an Expression  
 
+**NuGet package** [here](https://www.nuget.org/packages/FunctionZero.Maui.zBind)
+
 ## Contents
 1. [Quickstart](#Quickstart)
 1. [z:Bind](#zBind)
