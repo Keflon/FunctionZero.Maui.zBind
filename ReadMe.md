@@ -34,7 +34,7 @@ Xamarin NuGet [here](https://www.nuget.org/packages/FunctionZero.zBind)
 
 #### z:TapTrigger - modify a ViewModel property when tapped ...
 ```csharp
-<Button Text="Reset 'Count' in the ViewModel"
+<Button Text="Reset 'Count' in the ViewModel">
     <Button.Behaviors>
         <z:TapTrigger TapAction="{z:Function 'Count = 0'}"/>
     </Button.Behaviors>
