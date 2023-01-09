@@ -1,6 +1,10 @@
 ﻿# FunctionZero.Maui.zBind
 `FunctionZero.Maui.zBind` contains an alternative to `Microsoft.Maui.Controls.Binding` and allows DataBinding to an Expression  
 
+NuGet package [here](https://www.nuget.org/packages/FunctionZero.Maui.zBind)  
+Xamarin version [here](https://github.com/Keflon/FunctionZero.zBindTestApp)  
+Xamarin NuGet [here](https://www.nuget.org/packages/FunctionZero.zBind)  
+
 ## Contents
 1. [Quickstart](#Quickstart)
 1. [z:Bind](#zBind)
@@ -30,7 +34,7 @@
 
 #### z:TapTrigger - modify a ViewModel property when tapped ...
 ```csharp
-<Button Text="Reset 'Count' in the ViewModel"
+<Button Text="Reset 'Count' in the ViewModel">
     <Button.Behaviors>
         <z:TapTrigger TapAction="{z:Function 'Count = 0'}"/>
     </Button.Behaviors>
