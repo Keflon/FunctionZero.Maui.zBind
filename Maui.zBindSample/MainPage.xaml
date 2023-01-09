@@ -57,13 +57,21 @@ z:TapTrigger
 
         <Label Grid.Row="2" Text="{z:Bind '\'Count : \'+Count'}" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
 
-        <Button Grid.Row="3"
+        <!--<Button Grid.Row="3"
                 Text="Reset 'Count' using a TapTrigger"
                 SemanticProperties.Hint="Resets the Count variable"
                 HorizontalOptions="CenterAndExpand" >
             <Button.Behaviors>
                 <z:TapTrigger TapAction="{z:Function 'Count = 0'}"/>
             </Button.Behaviors>
-        </Button>
+        </Button>-->
+        <Label Grid.Row="3"
+                Text="Reset 'Count' using a TapTrigger"
+                SemanticProperties.Hint="Resets the Count variable"
+                HorizontalOptions="CenterAndExpand" >
+            <Label.Behaviors>
+                <z:TapTrigger TapAction="{z:Function 'Count = 0'}"/>
+            </Label.Behaviors>
+        </Label>
     </Grid>
 </ContentPage>

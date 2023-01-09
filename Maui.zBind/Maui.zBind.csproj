@@ -21,14 +21,15 @@
 		<Title>FunctionZero.$(AssemblyName)</Title>
 		<Product>FunctionZero.$(AssemblyName)</Product>
 		<Copyright>(c) 2022 FunctionZero Ltd</Copyright>
-		<PackageReleaseNotes>Updated to latest ExpressionParser</PackageReleaseNotes>
-		<Version>1.0.1</Version>
+		<PackageReleaseNotes>TapTrigger can now be applied to any UI element that derives from View.</PackageReleaseNotes>
+		<Version>1.0.2</Version>
 		<AssemblyName>FunctionZero.$(MSBuildProjectName)</AssemblyName>
 		<Description>DataBind to Expressions rather than just to Properties</Description>
 		<PackageLicenseFile>License.txt</PackageLicenseFile>
 		<RepositoryUrl>https://github.com/Keflon/FunctionZero.Maui.zBind</RepositoryUrl>
 		<PackageTags>zBind z:Bind Bind Binding Databind xaml MAUI ios android WinUI maccatalyst expression parser evaluator short circuit POCO </PackageTags>
 		<PackageReadmeFile>ReadMe.NuGet.md</PackageReadmeFile>
+		<PackageProjectUrl>https://github.com/Keflon/FunctionZero.Maui.zBind</PackageProjectUrl>
 	</PropertyGroup>
 
 	<ItemGroup>

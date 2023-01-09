@@ -30,10 +30,16 @@ namespace FunctionZero.Maui.zBind.z
                 host.BindingContextChanged += _host_BindingContextChanged;
                 b.Clicked += DoAction;
             }
-            else
+            else if (host is View v)
             {
-                throw new NotImplementedException();
+                host.BindingContextChanged += _host_BindingContextChanged;
+                var tgr = new TapGestureRecognizer();
+                tgr.Tapped += DoAction;
+                v.GestureRecognizers.Add(tgr);
             }
+            else
+                throw new NotImplementedException("TapTrigger - host is not a View");
+
             base.OnAttachedTo(host);
         }
 
