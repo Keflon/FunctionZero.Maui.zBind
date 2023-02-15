@@ -9,4 +9,4 @@
             MainPage = new AppShell();
         }
     }
-}
+} 
