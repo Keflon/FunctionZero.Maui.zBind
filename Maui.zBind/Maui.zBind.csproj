@@ -21,8 +21,8 @@
 		<Title>FunctionZero.$(AssemblyName)</Title>
 		<Product>FunctionZero.$(AssemblyName)</Product>
 		<Copyright>(c) 2022 FunctionZero Ltd</Copyright>
-		<PackageReleaseNotes>TapTrigger can now be applied to any UI element that derives from View.</PackageReleaseNotes>
-		<Version>1.0.2</Version>
+		<PackageReleaseNotes>Built against .NET 7.</PackageReleaseNotes>
+		<Version>1.1.0</Version>
 		<AssemblyName>FunctionZero.$(MSBuildProjectName)</AssemblyName>
 		<Description>DataBind to Expressions rather than just to Properties</Description>
 		<PackageLicenseFile>License.txt</PackageLicenseFile>
