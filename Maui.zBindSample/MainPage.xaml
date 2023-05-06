@@ -24,7 +24,14 @@
                 </Button.Behaviors>
             </Button>
 
-            <Slider Grid.Column="1" Margin="20"  x:Name="TheSlider" Minimum="0" Maximum="1" Value="0.5" HorizontalOptions="FillAndExpand"/>
+            <Slider 
+                Grid.Column="1" 
+                x:Name="TheSlider" 
+                Minimum="0" 
+                Maximum="1" 
+                Value="0.5" 
+                HorizontalOptions="FillAndExpand"
+                />
 
             <Button Grid.Column="2" Text="+" >
                 <Button.Behaviors>
