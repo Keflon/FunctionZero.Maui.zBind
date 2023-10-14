@@ -234,9 +234,9 @@ For example, to show or hide UI based on a *player data* found in the *ViewModel
 
 
 ## z:Latch
-Coming soon  
+Coming s<sub>p</sub>oon <sup>*</sup>  
 ### Usage
-Coming soon  
+Coming s<sub>p</sub>oon <sup>*</sup>  
 
 
 
@@ -333,3 +333,9 @@ Putting the above into action, you can then start to really have some fun
     Rotation="{z:Bind 'Lerp(0, 360, rotationPercent / 100.0)'"}
 />
 ```
+
+
+
+
+
+<sup>* There is no spoon.<sup>  
