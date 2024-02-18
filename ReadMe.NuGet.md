@@ -1,5 +1,8 @@
 ﻿`FunctionZero.Maui.zBind` is a `xaml` markup extension for **MAUI** that allows you to bind directly to an `expression` 
 
+Install version 8.0.0 and above for .NET 8.  
+
+
 If you want to do things like this: (note the expression is enclosed inside quotes)
 ```xaml
 <StackLayout IsVisible="{z:Bind '(Item.Count != 0) AND (Status == \'Administrator\')'}" > ...

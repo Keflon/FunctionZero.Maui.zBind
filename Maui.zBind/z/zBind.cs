@@ -76,6 +76,7 @@ namespace FunctionZero.Maui.zBind.z
                     ConstantResult = operand.GetValue();
                     return new Binding(nameof(ConstantResult), BindingMode.OneTime, null, null, null, this);
                 }
+
                 return _multiBind;
             }
             catch (ExpressionParserException ex)

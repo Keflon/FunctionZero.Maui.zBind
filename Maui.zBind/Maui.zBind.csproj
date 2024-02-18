@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net6.0-maccatalyst;net7.0-ios;net7.0-android</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0;net8.0-maccatalyst;net8.0-ios;net8.0-android</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
 		<UseMaui>true</UseMaui>
@@ -20,9 +20,9 @@
 		<Authors>FunctionZero</Authors>
 		<Title>FunctionZero.$(AssemblyName)</Title>
 		<Product>FunctionZero.$(AssemblyName)</Product>
-		<Copyright>(c) 2022 FunctionZero Ltd</Copyright>
-		<PackageReleaseNotes>Built against .NET 7.</PackageReleaseNotes>
-		<Version>1.1.0</Version>
+		<Copyright>(c) 2024 FunctionZero Ltd</Copyright>
+		<PackageReleaseNotes>Updated to latest ExpressionParserZero</PackageReleaseNotes>
+		<Version>8.0.2</Version>
 		<AssemblyName>FunctionZero.$(MSBuildProjectName)</AssemblyName>
 		<Description>DataBind to Expressions rather than just to Properties</Description>
 		<PackageLicenseFile>License.txt</PackageLicenseFile>
@@ -30,51 +30,58 @@
 		<PackageTags>zBind z:Bind Bind Binding Databind xaml MAUI ios android WinUI maccatalyst expression parser evaluator short circuit POCO </PackageTags>
 		<PackageReadmeFile>ReadMe.NuGet.md</PackageReadmeFile>
 		<PackageProjectUrl>https://github.com/Keflon/FunctionZero.Maui.zBind</PackageProjectUrl>
+		<PackageIcon>F0 gravatar.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Maui.zBind\**" />
-	  <EmbeddedResource Remove="Maui.zBind\**" />
-	  <MauiCss Remove="Maui.zBind\**" />
-	  <MauiXaml Remove="Maui.zBind\**" />
-	  <None Remove="Maui.zBind\**" />
+		<Compile Remove="Maui.zBind\**" />
+		<EmbeddedResource Remove="Maui.zBind\**" />
+		<MauiCss Remove="Maui.zBind\**" />
+		<MauiXaml Remove="Maui.zBind\**" />
+		<None Remove="Maui.zBind\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="..\License.txt">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	  <None Include="..\ReadMe.NuGet.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
+		<None Include="..\..\..\..\..\OneDrive\Desktop\F0 gravatar.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\License.txt">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\ReadMe.NuGet.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="FunctionZero.ExpressionParserZero" Version="5.2.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="FunctionZero.ExpressionParserZero" Version="5.3.1" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Properties\Resources.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>Resources.resx</DependentUpon>
-	  </Compile>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Update="Properties\Resources.resx">
-	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="License.txt">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
+		<None Update="License.txt">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 </Project>
