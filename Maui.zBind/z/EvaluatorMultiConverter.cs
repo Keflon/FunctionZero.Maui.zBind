@@ -18,11 +18,15 @@ namespace FunctionZero.Maui.zBind.z
         private readonly List<ExpressionTreeNode> _unExpressionTreeParentList;
         private readonly ExpressionTree _unExpressionTree;
         private readonly string _variableName;
+        private readonly bool _isMultiBind;
 
         public event EventHandler Converted;
 
         public EvaluatorMultiConverter(ICollection<string> keys, ExpressionTree compiledExpression, Bind bindingExtension)
         {
+            if (bindingExtension is MultiBind)
+                _isMultiBind = true;
+
             _evaluator = new VariableEvaluator(new List<string>(keys), bindingExtension);
             _compiledExpressionTree = compiledExpression;
 
@@ -68,8 +72,18 @@ namespace FunctionZero.Maui.zBind.z
             try
             {
                 var stack = _compiledExpressionTree.Evaluate(_evaluator);
-                var thing = ExpressionParserZero.OperatorActions.PopAndResolve(stack, _evaluator);
-                return thing.GetValue();
+                if (_isMultiBind)
+                {
+                    var retval = new List<object>();
+                    while (stack.Count > 0)
+                        retval.Add(ExpressionParserZero.OperatorActions.PopAndResolve(stack, _evaluator));
+                    return retval;
+                }
+                else
+                {
+                    var thing = ExpressionParserZero.OperatorActions.PopAndResolve(stack, _evaluator);
+                    return thing.GetValue();
+                }
             }
             catch (Exception ex)
             {

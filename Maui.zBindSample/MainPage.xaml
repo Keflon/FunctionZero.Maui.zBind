@@ -62,7 +62,8 @@ z:TapTrigger
         </Label>
 
 
-        <Label Grid.Row="2" Text="{z:Bind '\'Count : \'+Count'}" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
+        <Label Grid.Row="2" Text="{z:Bind '\'Count : \'+Count'}" HorizontalTextAlignment="Center"/>
+        <Label Grid.Row="2" Text="{z:MultiBind 'Count,Count*2'}"  HorizontalTextAlignment="End"/>
 
         <!--<Button Grid.Row="3"
                 Text="Reset 'Count' using a TapTrigger"
