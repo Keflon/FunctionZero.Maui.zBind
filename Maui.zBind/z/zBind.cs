@@ -72,8 +72,14 @@ namespace FunctionZero.Maui.zBind.z
                 {
                     // The expression is a constant, so there is nothing to bind to. Evaluate it and return a suitable dummy Binding.
                     var stack = compiledExpression.Evaluate(null);
-                    var operand = stack.Pop();
-                    ConstantResult = operand.GetValue();
+                    if (this is MultiBind == false)
+                    {
+                        var operand = stack.Pop();
+                        ConstantResult = operand.GetValue();
+                    }
+                    else
+                        ConstantResult = stack;
+
                     return new Binding(nameof(ConstantResult), BindingMode.OneTime, null, null, null, this);
                 }
 
