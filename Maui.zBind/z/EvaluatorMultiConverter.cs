@@ -76,7 +76,7 @@ namespace FunctionZero.Maui.zBind.z
                 {
                     var retval = new List<object>();
                     while (stack.Count > 0)
-                        retval.Add(ExpressionParserZero.OperatorActions.PopAndResolve(stack, _evaluator));
+                        retval.Add(ExpressionParserZero.OperatorActions.PopAndResolve(stack, _evaluator).GetValue());
                     return retval;
                 }
                 else

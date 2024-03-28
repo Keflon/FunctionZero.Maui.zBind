@@ -78,7 +78,12 @@ namespace FunctionZero.Maui.zBind.z
                         ConstantResult = operand.GetValue();
                     }
                     else
-                        ConstantResult = stack;
+                    {
+                        var result = new List<object>();
+                        while (stack.Count > 0)
+                            result.Add(stack.Pop().GetValue());
+                        ConstantResult = result;
+                    }
 
                     return new Binding(nameof(ConstantResult), BindingMode.OneTime, null, null, null, this);
                 }
