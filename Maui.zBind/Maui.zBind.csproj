@@ -21,8 +21,8 @@
 		<Title>FunctionZero.$(AssemblyName)</Title>
 		<Product>FunctionZero.$(AssemblyName)</Product>
 		<Copyright>(c) 2024 FunctionZero Ltd</Copyright>
-		<PackageReleaseNotes>Added z:MultiBind preview.</PackageReleaseNotes>
-		<Version>8.1.0-pre4</Version>
+		<PackageReleaseNotes>z:MultiBind is out of preview.</PackageReleaseNotes>
+		<Version>8.1.0</Version>
 		<AssemblyName>FunctionZero.$(MSBuildProjectName)</AssemblyName>
 		<Description>DataBind to Expressions rather than just to Properties</Description>
 		<PackageLicenseFile>License.txt</PackageLicenseFile>
